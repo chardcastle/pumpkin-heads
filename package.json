@@ -1,0 +1,12 @@
+{
+  "name": "pumpkin-heads",
+  "version": "1.0.0",
+  "description": "Image generator",
+  "main": "index.js",
+  "type": "module",
+  "author": "Chris and Ronnie",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.template": "^4.5.0"
+  }
+}
