@@ -6,7 +6,11 @@
   "type": "module",
   "author": "Chris and Ronnie",
   "license": "MIT",
+  "scripts": {
+    "generate": "export NODE_DEBUG=app && node index.js"
+  },
   "dependencies": {
+    "csv-parse": "^4.16.3",
     "lodash.template": "^4.5.0"
   }
 }

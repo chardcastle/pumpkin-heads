@@ -1,28 +1,60 @@
 import util from 'util';
 const debuglog = util.debuglog('app');
 import template from 'lodash.template'
-import { readFileSync, writeFileSync} from 'fs';
+import fs from 'fs';
+import parse from 'csv-parse';
 
 let svg;
+const dir = 'output';
 const imageDefaults = {
   pumpkinColour: 'orange',
-  eyesColour: 'blue',
+  eyesColour: 'black',
   mouthColour: 'black',
+  topBgColour: 'green',
+  bottomBgColour: 'pink'
 }
 
 try {
-  debuglog('Reading template file');
-  const data = readFileSync('./template.svg', 'utf8')
-  const compiled = template(data);
-  const config = {
-    ...imageDefaults,
-    pumpkinColour: 'red'
-  }
-  debuglog('Config is', config);
-  svg = compiled(config);
+  debuglog('Reading item template');
+  const templateData = fs.readFileSync('./template.svg', 'utf8');
 
-  writeFileSync('out.svg', svg);
-  debuglog('Created SVG file');
+  if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+  }
+
+  debuglog('Parsing pumpkin head data');
+  var itemConfigs = [];
+  fs.createReadStream('./pumpkin-heads.csv')
+      .pipe(parse({delimiter: ',', from_line: 2}))
+      .on('data', (csvrow) => {
+        const itemConfig = {
+          name: csvrow[0].trim(),
+          pumpkinColour: csvrow[1].trim(),
+          eyesColour: csvrow[2].trim(),
+          mouthColour: csvrow[3].trim(),
+          topBgColour: csvrow[4].trim(),
+          bottomBgColour: csvrow[5].trim()
+        }
+        debuglog('Item config is', itemConfig);
+        itemConfigs.push(itemConfig);
+      })
+      .on('end', () => {
+        let createdItemsCount = 0;
+        itemConfigs.forEach((config) => {
+          const compiled = template(templateData);
+          const itemConfig = {
+            ...imageDefaults,
+            ...config
+          }
+          svg = compiled(itemConfig);
+          debuglog('Creating with config', itemConfig);
+
+          fs.writeFileSync(`${dir}/${itemConfig.name}.svg`, svg);
+          debuglog(`Created ${itemConfig.name}`);
+          createdItemsCount++;
+        });
+        debuglog(`Created ${createdItemsCount} items`);
+      });
 } catch (err) {
   debuglog(`Error ${err}`);
 }

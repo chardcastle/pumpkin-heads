@@ -7,8 +7,8 @@
      viewBox="0 0 5000 3500">
     <defs>
         <linearGradient id="backgroundGradient" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stop-color="green"/>
-            <stop offset="100%" stop-color="pink"/>
+            <stop offset="0%" stop-color="<%= topBgColour %>"/>
+            <stop offset="100%" stop-color="<%= bottomBgColour %>"/>
         </linearGradient>
     </defs>
 
@@ -66,7 +66,7 @@
                      2506.82,1248.48 2482.15,1179.39 2482.15,1179.39 Z" />
 
         <path id="mouth"
-              fill="black" stroke="none" stroke-width="1"
+              fill="<%= mouthColour %>" stroke="none" stroke-width="1"
               d="M 2033.09,1894.92
                C 1988.68,2013.35 1804.74,2074.43 1702.47,2042.96
                  1573.78,2003.37 1559.36,1746.88 1559.36,1746.88
@@ -80,7 +80,7 @@
                  2200.87,1944.27 2077.50,1909.72 2033.09,1894.92 Z" />
 
         <path id="stalk"
-              fill="Sienna" stroke="SaddleBrown" stroke-width="1"
+              fill="<%= eyesColour %>" stroke="SaddleBrown" stroke-width="1"
               d="M 1850.51,177.65
            C 1850.51,182.58 2215.67,261.54 2215.67,261.54
              2215.67,261.54 2195.94,439.19 2195.94,439.19
@@ -88,5 +88,4 @@
              1864.27,486.95 1796.23,370.10 1796.23,370.10
              1796.23,370.10 1850.51,172.71 1850.51,177.65 Z" />
     </svg>
-
 </svg>
