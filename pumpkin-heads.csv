@@ -1,5 +1,54 @@
-name,pumpkinColour,eyesColour,mouthColour,topBgColour,bottomBgColour
-bob, pink, blue, blue, green, black
-harry, red, sienna, sienna, blue, purple
-betty, green, blue, blue, black, purple
-sally, yellow, blue, black, purple, pink
+name,pumpkinColour,stalkColour,eyesColour,mouthColour,topBgColour,bottomBgColour,eyeStyle,mouthStyle,gender
+bob, pink, blue, sienna,blue,green, black, DEFAULT,DEFAULT,
+harry, red, sienna, sienna,black,blue, purple,CROSSED,FANGS,
+simpleton, red, white,sienna,white,blue, purple, DEFAULT,DEFAULT,
+betty, green, blue, sienna,blue,black, purple,CROSSED,WIDE,
+sally, yellow, blue, sienna,black, purple, pink,CROSSED,FANGS,
+brit,aqua,purple,sienna,black,gainsboro,ghostwhite,CROSSED,FANGS,
+all-that-glitters-is-not-gold,goldenrod,silver,silver,sienna,black,black,TRIANGLE,WIDE,
+all-that-glitters-is-not-lime,goldenrod,silver,silver,sienna,lime,lime,CROSSED,WIDE,
+jarrod,lime,blue,sienna,pink,plum,red,TRIANGLE,FANGS,
+rebbecca,lime,sienna,blue,orchid,purple,rebbeccaPurple,TRIANGLE,DEFAULT,GIRL
+alice,beige,orchid,blue,pink,aqua,aquamarine,CROSSED,FANGS,GIRL
+coco,burlyWood,white,blueViolet,teal,brown,chocolate,DEFAULT,WIDE,
+pop,coral,sienna,blueViolet,blueViolet,cornsilk,cyan,CROSSED,FANGS,
+cornel,darkKhaki,sienna,darkGreen,darkGreen,darkCyan,darkBlue,CROSSED,FANGS,
+darky,darkSalmon,sienna,darkSeaGreen,darkSlateBlue,darkOrange,darkRed,CROSSED,WIDE,
+tangle,darkTurquoise,sienna,deepPink,darkSlateBlue,darkSeaGreen,darkSlateGrey,CROSSED,WIDE,
+vauxhall,darkViolet,sienna,deepSkyBlue,black,deepPink,fireBrick,CROSSED,DEFAULT,
+rasta,gold,indianRed,green,darkSlateBlue,green,darkGreen,CROSSED,FANGS,
+roofus,lemonChiffon,kahki,lightBlue,lightCoral,lavender,lightCyan,CROSSED,FANGS,
+zebedde,khaki,limeGreen,red,indigo,hotPink,red,CROSSED,WIDE,
+zoe,coral,grey,black,mauve,white,violet,TRIANGLE,WIDE,GIRL
+claudia,lightBlue,ivory,lightCyan,hotPink,indianRed,red,DEFAULT,WIDE,
+alpha,lemonChiffon,lemonChiffon,indigo,hotPink,lawnGreen,red,CROSSED,WIDE,
+bravo,indigo,darkMagenta,hotpink,lawngreen,chartreuse,aquamarine,CROSSED,WIDE,
+boycie,indianRed,ivory,ivory,ivory,indigo,hotpink,TRIANGLE,WIDE,
+charlie,lightPink,lightSeaGreen,orange,lightSeaGreen,chocolate,red,DEFAULT,FANGS,
+delta,lightSalmon,teal,darkBlue,blue,lightGreen,LightSeaGreen,CROSSED,DEFAULT,
+echo,lightGoldenRodYellow,lightGray,lightGreen,lightSalmon,lightSeaGreen,LightSlateGray,DEFAULT,WIDE,
+foxtrot,linen,lightSteelBlue,maroon,mediumBlue,lightSteelBlue,lightSlateGrey,CROSSED,WIDE,
+frankie,mediumAquaMarine,maroon,mediumOrchid,mediumOrchid,coral,coral,TRIANGLE,WIDE,
+geff,maroon,maroon,linen,linen,lightYellow,lightSteelBlue,CROSSED,DEFAULT,
+hotel,mediumSpringGreen,mediumSlateBlue,mediumOrchid,mediumBlue,mediumOrchid,mediumVioletRed,CROSSED,WIDE,
+india,mediumPurple,mediumSlateBlue,mediumTurquoise,mediumSpringGreen,mediumOrchid,mediumVioletRed,DEFAULT,DEFAULT,
+juliet,mediumSeaGreen,mediumSeaGreen,mediumVioletRed,black,mediumSlateBlue,mediumTurquoise,TRIANGLE,WIDE,GIRL
+kilo,coral,olive,mistyRose,navajoWhite,oldLace,oliveDrab,TRIANGLE,DEFAULT,
+lima,orangeRed,orange,orchid,olive,mistyRose,moccasin,CROSSED,DEFAULT,
+mike,paleVioletRed,paleVioletRed,paleGreen,PaleGoldenRod,peru,pink,CROSSED,WIDE,
+mother,orangeRed,kakhi,oliveDrab,limeGreen,paleGreen,paleVioletRed,TRIANGLE,DEFAULT,GIRL
+margerie,purple,purple,red,powderBlue,powderBlue,royalBlue,TRIANGLE,FANGS,GIRL
+november,sandyBrown,kahki,purple,rebeccaPurple,plum,powderBlue,DEFAULT,WIDE,
+oscar,seaGreen,sienna,seaShell,silver,salmon,sandyBrown,CROSSED,FANGS,
+papa,tomato,teal,teal,thistle,springGreen,tan,DEFAULT,WIDE,
+quebec,steelBlue,steelBlue,tomato,thistle,tan,tan,CROSSED,FANGS,
+romeo,ivory,ivory,tomato,teal,tomato,violet,DEFAULT,WIDE,
+sierra,yellowGreen,yellow,whiteSmoke,tomato,thistle,teal,CROSSED,WIDE,
+tango,violet,tomato,teal,teal,tan,tan,DEFAULT,WIDE,
+uniform,thistle,thistle,teal,teal,violet,tomato,TRIANGLE,FANGS,
+victor,tomato,orchid,teal,black,tan,violet,CROSSED,DEFAULT,
+xray,maroon,olive,blueViolet,white,lightSkyBlue,darkSeaGreen,CROSSED,WIDE,
+whisky,saddleBrown,saddleBrown,chartreuse,aquamarine,yellowGreen,paleGreen,DEFAULT,WIDE,
+yankee,lightGreen,teal,darkViolet,brown,fireBrick,mediumVioletRed,CROSSED,WIDE,
+zulu,chocolate,ivory,black,black,mediumOrchid,black,TRIANGLE,WIDE,
+maisie,lightBlue,#CF9FFF,lightPink,lightPink,#CBC3E3,darkPurple,DEFAULT,FANGS,

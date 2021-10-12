@@ -11,7 +11,56 @@ const imageDefaults = {
   eyesColour: 'black',
   mouthColour: 'black',
   topBgColour: 'green',
-  bottomBgColour: 'pink'
+  bottomBgColour: 'pink',
+}
+
+const getEyeStatesByType = (typeName, gender) => {
+  const eyeOptions = {
+    eyesDefaultState: 'hidden',
+    eyesCrossedState: 'hidden',
+    eyesTriangleGirlState: 'hidden',
+    eyesTriangleBoyState: 'hidden',
+  }
+
+  if (typeName === 'DEFAULT') {
+    eyeOptions.eyesDefaultState = 'visible';
+  }
+
+  if (typeName === 'CROSSED') {
+    eyeOptions.eyesCrossedState = 'visible';
+  }
+
+  if (typeName === 'TRIANGLE' && gender === 'GIRL') {
+    eyeOptions.eyesTriangleGirlState = 'visible';
+  }
+
+  if (typeName === 'TRIANGLE' && gender !== 'GIRL') {
+    eyeOptions.eyesTriangleBoyState = 'visible';
+  }
+
+  return eyeOptions;
+}
+
+const getMouthStatesByType = (typeName) => {
+  const mouthOptions = {
+    mouthDefaultState: 'hidden',
+    mouthFangsState: 'hidden',
+    mouthWideState: 'hidden',
+  }
+
+  if (typeName === 'DEFAULT') {
+    mouthOptions.mouthDefaultState = 'visible';
+  }
+
+  if (typeName === 'FANGS') {
+    mouthOptions.mouthFangsState = 'visible';
+  }
+
+  if (typeName === 'WIDE') {
+    mouthOptions.mouthWideState = 'visible';
+  }
+
+  return mouthOptions;
 }
 
 try {
@@ -27,13 +76,18 @@ try {
   fs.createReadStream('./pumpkin-heads.csv')
       .pipe(parse({delimiter: ',', from_line: 2}))
       .on('data', (csvrow) => {
+        const eyeStates = getEyeStatesByType(csvrow[7].trim(),csvrow[9].trim());
+        const mouthStates = getMouthStatesByType(csvrow[8].trim());
         const itemConfig = {
+          ...eyeStates,
+          ...mouthStates,
           name: csvrow[0].trim(),
           pumpkinColour: csvrow[1].trim(),
-          eyesColour: csvrow[2].trim(),
-          mouthColour: csvrow[3].trim(),
-          topBgColour: csvrow[4].trim(),
-          bottomBgColour: csvrow[5].trim()
+          stalkColour: csvrow[2].trim(),
+          eyesColour: csvrow[3].trim(),
+          mouthColour: csvrow[4].trim(),
+          topBgColour: csvrow[5].trim(),
+          bottomBgColour: csvrow[6].trim()
         }
         debuglog('Item config is', itemConfig);
         itemConfigs.push(itemConfig);
